@@ -11,7 +11,7 @@ import Alamofire
 let userCell = "fetchDataCell"
 let url = "https://dummy.restapiexample.com/api/v1/employees"
 
-class FetchDataViewController: UIViewController {
+class FetchDataViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     @IBOutlet weak var tableView: UITableView!
     
@@ -25,8 +25,11 @@ class FetchDataViewController: UIViewController {
             UINib(nibName: "FetchDataView", bundle: nil),
             forCellReuseIdentifier: userCell)
         
-//        tableView.delegate = self
-//        tableView.dataSource = self
+        tableView.delegate = self
+        tableView.dataSource = self
+        
+        tableView.rowHeight = 100
+        tableView.estimatedRowHeight = 500
         
         print(userEmployees)
         
@@ -60,15 +63,14 @@ class FetchDataViewController: UIViewController {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        return userEmployees.count
+        let cell = tableView.dequeueReusableCell(withIdentifier: userCell, for: indexPath) as! FetchDataView
 
+        cell.setValue(nameValue: userEmployees[indexPath.row].name, ageValue: userEmployees[indexPath.row].age,  salaryValue: userEmployees[indexPath.row].salary)
+        return cell
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        let cell = tableView.dequeueReusableCell(withIdentifier: userCell)
-
-        cell?.setValue(nameValue: userEmployees[IndexPath.row].name, ageValue: userEmployees[IndexPath.row].age,  salaryValue: userEmployees[IndexPath.row].salary)
-        return cell
+        return userEmployees.count
     }
 
 
