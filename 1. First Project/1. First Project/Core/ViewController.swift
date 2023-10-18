@@ -19,7 +19,12 @@ class ViewController: UIViewController {
         
     }
 
-    @IBAction func buttonToTableClick(_ sender: Any) {
+    @IBAction func fetchDataClick(_ sender: UIButton) {
+        let fetchView = self.storyboard?.instantiateViewController(withIdentifier: "FetchView") as! FetchDataViewController
+        self.navigationController?.pushViewController(fetchView, animated: true)
+    }
+    
+    @IBAction func buttonToTableClick(_ sender: UIButton) {
         
 //        performSegue(withIdentifier: "toTableView", sender: nil)
         

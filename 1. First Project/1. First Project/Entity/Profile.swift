@@ -8,7 +8,6 @@
 import Foundation
 
 struct Profile {
-    
     let name: String
     let job: String
     let age: Int
@@ -16,8 +15,10 @@ struct Profile {
 }
 
 enum ProfileType: String{
-    case name = "Name"
-    case job = "Engineer"
-    case age = "umur"
-    case bio = "bio"
+    case name
+    case job
+    case age
+    case bio
 }
+
+

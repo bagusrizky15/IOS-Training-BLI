@@ -28,7 +28,6 @@
                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="username" minimumFontSize="22" translatesAutoresizingMaskIntoConstraints="NO" id="c3s-il-AG5">
                                 <rect key="frame" x="63" y="388" width="266" height="50"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxY="YES"/>
-                                <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
@@ -52,6 +51,15 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jo5-I6-lUa">
+                                <rect key="frame" x="123" y="589" width="147" height="42"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="tinted" title="Fetch Data"/>
+                                <connections>
+                                    <action selector="fetchDataClick:" destination="BYZ-38-t0r" eventType="touchUpInside" id="2c2-8f-Udo"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -59,8 +67,6 @@
                     <navigationItem key="navigationItem" id="uFU-Pn-bvk"/>
                     <connections>
                         <outlet property="textField" destination="c3s-il-AG5" id="PIG-ti-OC1"/>
-                        <segue destination="Fc1-zf-V7L" kind="show" identifier="toSecondVC" id="Mwl-d6-zNc"/>
-                        <segue destination="Ehv-l8-o5g" kind="show" identifier="" id="IS6-ge-ycW"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -98,6 +104,41 @@
             </objects>
             <point key="canvasLocation" x="1659" y="6"/>
         </scene>
+        <!--Fetch Data View Controller-->
+        <scene sceneID="fcR-ww-aRd">
+            <objects>
+                <viewController storyboardIdentifier="FetchView" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Ms5-wr-TQc" customClass="FetchDataViewController" customModule="___First_Project" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="JMP-U1-40F">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="m7Z-KD-igf">
+                                <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="fetchDataCell" id="whP-s2-XcQ">
+                                        <rect key="frame" x="0.0" y="50" width="393" height="43.666667938232422"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="whP-s2-XcQ" id="g3Y-Gc-GHG">
+                                            <rect key="frame" x="0.0" y="0.0" width="393" height="43.666667938232422"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="hBC-P4-yUE"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <connections>
+                        <outlet property="tableView" destination="m7Z-KD-igf" id="vBc-ks-13t"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rQe-9n-e9e" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="869.46564885496184" y="746.47887323943667"/>
+        </scene>
         <!--Table View Controller-->
         <scene sceneID="XlK-Ah-oM3">
             <objects>
@@ -107,7 +148,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="person.badge.clock.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="xnd-gI-IN5">
-                                <rect key="frame" x="120.66666666666667" y="105.00000000000001" width="149.33333333333331" height="111.33333333333334"/>
+                                <rect key="frame" x="120.66666666666667" y="61" width="149.33333333333331" height="155.33333333333331"/>
                             </imageView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="rK3-y9-COM">
                                 <rect key="frame" x="0.0" y="224.66666666666663" width="393" height="403"/>
