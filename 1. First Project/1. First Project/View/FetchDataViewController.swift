@@ -38,7 +38,7 @@ class FetchDataViewController: UIViewController, UITableViewDelegate, UITableVie
     
     func fetchData(url: String){
         AF.request(url, method: .get).responseData { response in
-            print(response.response?.statusCode)
+            print(response.response?.statusCode ?? 55)
             switch response.result{
             case .success(let data):
                 do{
@@ -46,9 +46,14 @@ class FetchDataViewController: UIViewController, UITableViewDelegate, UITableVie
                     print(jsonData.data)
                     let personData = jsonData.data
                     for data in personData {
-                        self.userEmployees.append(UserEmployee(name: data.employee_name, age: String(data.employee_age), salary: String(data.employee_salary)))
+                        self.userEmployees.append(
+                            UserEmployee(
+                                name: data.employee_name,
+                                age: String(data.employee_age),
+                                salary: String(data.employee_salary)
+                            )
+                        )
                     }
-                    print(data)
                 } catch {
                     print(String(describing: error))
                 }
@@ -62,16 +67,32 @@ class FetchDataViewController: UIViewController, UITableViewDelegate, UITableVie
         }
     }
     
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: userCell, for: indexPath) as! FetchDataView
-
-        cell.setValue(nameValue: userEmployees[indexPath.row].name, ageValue: userEmployees[indexPath.row].age,  salaryValue: userEmployees[indexPath.row].salary)
-        return cell
-    }
-
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return userEmployees.count
     }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: userCell, for: indexPath) as! FetchDataView
 
+        cell.setValue(
+            nameValue: userEmployees[indexPath.row].name,
+            ageValue: userEmployees[indexPath.row].age,
+            salaryValue: userEmployees[indexPath.row].salary
+        )
+        
+        return cell
+    }
+    
+    func loadingText(){
+        let alert = UIAlertController(title: nil, message: "Please wait...", preferredStyle: .alert)
+
+        let loadingIndicator = UIActivityIndicatorView(frame: CGRect(x: 10, y: 5, width: 50, height: 50))
+        loadingIndicator.hidesWhenStopped = true
+        loadingIndicator.style = UIActivityIndicatorView.Style.gray
+        loadingIndicator.startAnimating();
+
+        alert.view.addSubview(loadingIndicator)
+        present(alert, animated: true, completion: nil)
+    }
 
 }

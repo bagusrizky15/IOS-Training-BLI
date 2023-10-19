@@ -8,6 +8,23 @@
 
 /* Begin PBXBuildFile section */
 		963753952ADFD5F2005BC7DB /* UserEmployee.swift in Sources */ = {isa = PBXBuildFile; fileRef = 963753942ADFD5F2005BC7DB /* UserEmployee.swift */; };
+		963753C22AE0C8C5005BC7DB /* Coredata.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 963753C02AE0C8C5005BC7DB /* Coredata.xcdatamodeld */; };
+		963753CE2AE0CDAA005BC7DB /* CoreViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 963753CC2AE0CDAA005BC7DB /* CoreViewCell.swift */; };
+		963753CF2AE0CDAA005BC7DB /* CoreViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 963753CD2AE0CDAA005BC7DB /* CoreViewCell.xib */; };
+		963753D12AE0CDBE005BC7DB /* CoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 963753D02AE0CDBE005BC7DB /* CoreViewController.swift */; };
+		963753D72AE0D31C005BC7DB /* PersonModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 963753D62AE0D31B005BC7DB /* PersonModel.swift */; };
+		963753E12AE1051D005BC7DB /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 963753E02AE1051D005BC7DB /* APIService.swift */; };
+		963753E32AE10557005BC7DB /* EmployeeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 963753E22AE10557005BC7DB /* EmployeeViewModel.swift */; };
+		963753E92AE106B5005BC7DB /* Employee.swift in Sources */ = {isa = PBXBuildFile; fileRef = 963753E82AE106B5005BC7DB /* Employee.swift */; };
+		963753EF2AE10904005BC7DB /* mViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 963753ED2AE10904005BC7DB /* mViewController.swift */; };
+		963753F02AE10904005BC7DB /* mViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 963753EE2AE10904005BC7DB /* mViewController.xib */; };
+		963753F52AE10BE1005BC7DB /* mTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 963753F32AE10BE1005BC7DB /* mTableViewCell.swift */; };
+		963753F62AE10BE1005BC7DB /* mTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 963753F42AE10BE1005BC7DB /* mTableViewCell.xib */; };
+		963753F92AE112B5005BC7DB /* TaskMvViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 963753F82AE112B5005BC7DB /* TaskMvViewController.swift */; };
+		963753FF2AE1169E005BC7DB /* TaskTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 963753FD2AE1169E005BC7DB /* TaskTableViewCell.swift */; };
+		963754002AE1169E005BC7DB /* TaskTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 963753FE2AE1169E005BC7DB /* TaskTableViewCell.xib */; };
+		963754022AE11795005BC7DB /* KaryawanModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 963754012AE11795005BC7DB /* KaryawanModel.swift */; };
+		963754042AE1196E005BC7DB /* KaryawanViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 963754032AE1196D005BC7DB /* KaryawanViewModel.swift */; };
 		963858442AD8E5A300DCC85B /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 963858432AD8E5A300DCC85B /* SecondViewController.swift */; };
 		963858612AD9392C00DCC85B /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9638585F2AD9392C00DCC85B /* ProfileView.swift */; };
 		963858622AD9392C00DCC85B /* ProfileView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 963858602AD9392C00DCC85B /* ProfileView.xib */; };
@@ -30,6 +47,23 @@
 		1527A9E0BC962511174C95AF /* Pods-1. First Project.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-1. First Project.release.xcconfig"; path = "Target Support Files/Pods-1. First Project/Pods-1. First Project.release.xcconfig"; sourceTree = "<group>"; };
 		8DB5B92DE40C725CE35ECD44 /* Pods-1. First Project.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-1. First Project.debug.xcconfig"; path = "Target Support Files/Pods-1. First Project/Pods-1. First Project.debug.xcconfig"; sourceTree = "<group>"; };
 		963753942ADFD5F2005BC7DB /* UserEmployee.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserEmployee.swift; sourceTree = "<group>"; };
+		963753C12AE0C8C5005BC7DB /* Coredata.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Coredata.xcdatamodel; sourceTree = "<group>"; };
+		963753CC2AE0CDAA005BC7DB /* CoreViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreViewCell.swift; sourceTree = "<group>"; };
+		963753CD2AE0CDAA005BC7DB /* CoreViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CoreViewCell.xib; sourceTree = "<group>"; };
+		963753D02AE0CDBE005BC7DB /* CoreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreViewController.swift; sourceTree = "<group>"; };
+		963753D62AE0D31B005BC7DB /* PersonModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonModel.swift; sourceTree = "<group>"; };
+		963753E02AE1051D005BC7DB /* APIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
+		963753E22AE10557005BC7DB /* EmployeeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeeViewModel.swift; sourceTree = "<group>"; };
+		963753E82AE106B5005BC7DB /* Employee.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Employee.swift; sourceTree = "<group>"; };
+		963753ED2AE10904005BC7DB /* mViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mViewController.swift; sourceTree = "<group>"; };
+		963753EE2AE10904005BC7DB /* mViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = mViewController.xib; sourceTree = "<group>"; };
+		963753F32AE10BE1005BC7DB /* mTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mTableViewCell.swift; sourceTree = "<group>"; };
+		963753F42AE10BE1005BC7DB /* mTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = mTableViewCell.xib; sourceTree = "<group>"; };
+		963753F82AE112B5005BC7DB /* TaskMvViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskMvViewController.swift; sourceTree = "<group>"; };
+		963753FD2AE1169E005BC7DB /* TaskTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskTableViewCell.swift; sourceTree = "<group>"; };
+		963753FE2AE1169E005BC7DB /* TaskTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TaskTableViewCell.xib; sourceTree = "<group>"; };
+		963754012AE11795005BC7DB /* KaryawanModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KaryawanModel.swift; sourceTree = "<group>"; };
+		963754032AE1196D005BC7DB /* KaryawanViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KaryawanViewModel.swift; sourceTree = "<group>"; };
 		963858432AD8E5A300DCC85B /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
 		9638585F2AD9392C00DCC85B /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		963858602AD9392C00DCC85B /* ProfileView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfileView.xib; sourceTree = "<group>"; };
@@ -81,6 +115,98 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		963753C32AE0CA00005BC7DB /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				963753CC2AE0CDAA005BC7DB /* CoreViewCell.swift */,
+				963753CD2AE0CDAA005BC7DB /* CoreViewCell.xib */,
+				963753D02AE0CDBE005BC7DB /* CoreViewController.swift */,
+			);
+			path = CoreData;
+			sourceTree = "<group>";
+		};
+		963753DC2AE10441005BC7DB /* MVVM */ = {
+			isa = PBXGroup;
+			children = (
+				963753DD2AE1044A005BC7DB /* ApiService */,
+				963753DE2AE10481005BC7DB /* Model */,
+				963753EC2AE10850005BC7DB /* View */,
+				963753DF2AE10487005BC7DB /* ViewModel */,
+			);
+			path = MVVM;
+			sourceTree = "<group>";
+		};
+		963753DD2AE1044A005BC7DB /* ApiService */ = {
+			isa = PBXGroup;
+			children = (
+				963753E02AE1051D005BC7DB /* APIService.swift */,
+			);
+			path = ApiService;
+			sourceTree = "<group>";
+		};
+		963753DE2AE10481005BC7DB /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				963753E82AE106B5005BC7DB /* Employee.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		963753DF2AE10487005BC7DB /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				963753E22AE10557005BC7DB /* EmployeeViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		963753EC2AE10850005BC7DB /* View */ = {
+			isa = PBXGroup;
+			children = (
+				963753ED2AE10904005BC7DB /* mViewController.swift */,
+				963753EE2AE10904005BC7DB /* mViewController.xib */,
+				963753F32AE10BE1005BC7DB /* mTableViewCell.swift */,
+				963753F42AE10BE1005BC7DB /* mTableViewCell.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		963753F72AE10DB4005BC7DB /* Task MVVM */ = {
+			isa = PBXGroup;
+			children = (
+				963753FC2AE115AF005BC7DB /* TableViewCell */,
+				963753FB2AE115A3005BC7DB /* ViewModel */,
+				963753FA2AE1159C005BC7DB /* Model */,
+				963753F82AE112B5005BC7DB /* TaskMvViewController.swift */,
+			);
+			path = "Task MVVM";
+			sourceTree = "<group>";
+		};
+		963753FA2AE1159C005BC7DB /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				963754012AE11795005BC7DB /* KaryawanModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		963753FB2AE115A3005BC7DB /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				963754032AE1196D005BC7DB /* KaryawanViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		963753FC2AE115AF005BC7DB /* TableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				963753FD2AE1169E005BC7DB /* TaskTableViewCell.swift */,
+				963753FE2AE1169E005BC7DB /* TaskTableViewCell.xib */,
+			);
+			path = TableViewCell;
+			sourceTree = "<group>";
+		};
 		963858582AD9389900DCC85B /* ProfileView */ = {
 			isa = PBXGroup;
 			children = (
@@ -111,8 +237,10 @@
 		966116F02AD790A600AE6C66 /* 1. First Project */ = {
 			isa = PBXGroup;
 			children = (
-				966116F12AD790A600AE6C66 /* AppDelegate.swift */,
 				966116F32AD790A600AE6C66 /* SceneDelegate.swift */,
+				966116F12AD790A600AE6C66 /* AppDelegate.swift */,
+				963753F72AE10DB4005BC7DB /* Task MVVM */,
+				963753DC2AE10441005BC7DB /* MVVM */,
 				96681BB72ADF7A430093AC18 /* Entity */,
 				96681BB62ADF78B10093AC18 /* Core */,
 				96681BB82ADF7A590093AC18 /* View */,
@@ -138,6 +266,8 @@
 				96681BB92ADF7AF40093AC18 /* Profile.swift */,
 				96B5B0F22ADFBB5B00B1541B /* Users.swift */,
 				963753942ADFD5F2005BC7DB /* UserEmployee.swift */,
+				963753C02AE0C8C5005BC7DB /* Coredata.xcdatamodeld */,
+				963753D62AE0D31B005BC7DB /* PersonModel.swift */,
 			);
 			path = Entity;
 			sourceTree = "<group>";
@@ -145,6 +275,7 @@
 		96681BB82ADF7A590093AC18 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				963753C32AE0CA00005BC7DB /* CoreData */,
 				96B5B0E72ADFB52100B1541B /* FetchData */,
 				963858582AD9389900DCC85B /* ProfileView */,
 				963858432AD8E5A300DCC85B /* SecondViewController.swift */,
@@ -224,8 +355,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				96B5B0F12ADFB8A800B1541B /* FetchDataView.xib in Resources */,
+				963753F02AE10904005BC7DB /* mViewController.xib in Resources */,
 				963858622AD9392C00DCC85B /* ProfileView.xib in Resources */,
+				963753F62AE10BE1005BC7DB /* mTableViewCell.xib in Resources */,
 				966116FE2AD790A800AE6C66 /* LaunchScreen.storyboard in Resources */,
+				963753CF2AE0CDAA005BC7DB /* CoreViewCell.xib in Resources */,
+				963754002AE1169E005BC7DB /* TaskTableViewCell.xib in Resources */,
 				966116FB2AD790A800AE6C66 /* Assets.xcassets in Resources */,
 				966116F92AD790A600AE6C66 /* Main.storyboard in Resources */,
 			);
@@ -282,13 +417,26 @@
 			files = (
 				963858442AD8E5A300DCC85B /* SecondViewController.swift in Sources */,
 				96681BBA2ADF7AF40093AC18 /* Profile.swift in Sources */,
+				963753FF2AE1169E005BC7DB /* TaskTableViewCell.swift in Sources */,
+				963753CE2AE0CDAA005BC7DB /* CoreViewCell.swift in Sources */,
 				96B5B0F32ADFBB5B00B1541B /* Users.swift in Sources */,
 				963858642AD93B1A00DCC85B /* TableViewController.swift in Sources */,
 				96B5B0F02ADFB8A800B1541B /* FetchDataView.swift in Sources */,
+				963753E12AE1051D005BC7DB /* APIService.swift in Sources */,
+				963753EF2AE10904005BC7DB /* mViewController.swift in Sources */,
+				963753E92AE106B5005BC7DB /* Employee.swift in Sources */,
+				963754022AE11795005BC7DB /* KaryawanModel.swift in Sources */,
 				96B5B0ED2ADFB87F00B1541B /* FetchDataViewController.swift in Sources */,
+				963754042AE1196E005BC7DB /* KaryawanViewModel.swift in Sources */,
+				963753C22AE0C8C5005BC7DB /* Coredata.xcdatamodeld in Sources */,
 				966116F62AD790A600AE6C66 /* ViewController.swift in Sources */,
 				966116F22AD790A600AE6C66 /* AppDelegate.swift in Sources */,
+				963753E32AE10557005BC7DB /* EmployeeViewModel.swift in Sources */,
 				963753952ADFD5F2005BC7DB /* UserEmployee.swift in Sources */,
+				963753F52AE10BE1005BC7DB /* mTableViewCell.swift in Sources */,
+				963753D12AE0CDBE005BC7DB /* CoreViewController.swift in Sources */,
+				963753F92AE112B5005BC7DB /* TaskMvViewController.swift in Sources */,
+				963753D72AE0D31C005BC7DB /* PersonModel.swift in Sources */,
 				963858612AD9392C00DCC85B /* ProfileView.swift in Sources */,
 				966116F42AD790A600AE6C66 /* SceneDelegate.swift in Sources */,
 			);
@@ -518,6 +666,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		963753C02AE0C8C5005BC7DB /* Coredata.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				963753C12AE0C8C5005BC7DB /* Coredata.xcdatamodel */,
+			);
+			currentVersion = 963753C12AE0C8C5005BC7DB /* Coredata.xcdatamodel */;
+			path = Coredata.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 966116E62AD790A600AE6C66 /* Project object */;
 }

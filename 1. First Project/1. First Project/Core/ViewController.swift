@@ -8,7 +8,7 @@
 import UIKit
 
 class ViewController: UIViewController {
-
+    
     @IBOutlet weak var textField: UITextField!
     var textFill = ""
     
@@ -18,7 +18,42 @@ class ViewController: UIViewController {
         textField.borderStyle = UITextField.BorderStyle.roundedRect
         
     }
-
+    
+    
+    @IBAction func taskMvClick(_ sender: UIButton) {
+        let taskMView = self.storyboard?.instantiateViewController(withIdentifier: "TaskMView") as! TaskMvViewController
+        self.navigationController?.pushViewController(taskMView, animated: true)
+    }
+    
+    @IBAction func mvvmButtonClick(_ sender: UIButton) {
+        
+        let alert = UIAlertController(title: "Warning", message: "Fiturnya belom selesai!", preferredStyle: UIAlertController.Style.alert)
+        
+        let okAction = UIAlertAction(title: "OK Om!", style: .default)
+        alert.addAction(okAction)
+        
+        self.present(alert, animated: true)
+        
+//        let mvvmView = UIViewController(nibName: "mViewController", bundle: nil)
+//        self.navigationController?.pushViewController(mvvmView, animated: true)
+    }
+    
+    @IBAction func testButtonClick(_ sender: UIButton) {
+//        let coreView = UIViewController(nibName: "CoreDataViewController", bundle: nil)
+//        self.navigationController?.pushViewController(coreView, animated: true)
+//        self.present(coreView, animated: true)
+        
+        let alert = UIAlertController(title: "Warning", message: "Fiturnya belom selesai!", preferredStyle: UIAlertController.Style.alert)
+        
+        let okAction = UIAlertAction(title: "OK Om!", style: .default)
+        alert.addAction(okAction)
+        
+        self.present(alert, animated: true)
+        
+//        let coreView = self.storyboard?.instantiateViewController(withIdentifier: "CoreViewCell") as! CoreViewController
+//        self.navigationController?.pushViewController(coreView, animated: true)
+    }
+    
     @IBAction func fetchDataClick(_ sender: UIButton) {
         let fetchView = self.storyboard?.instantiateViewController(withIdentifier: "FetchView") as! FetchDataViewController
         self.navigationController?.pushViewController(fetchView, animated: true)
