@@ -36,8 +36,6 @@ class KaryawanViewModel: NSObject {
         } catch let err {
             print("Error ", err)
         }
-        
-        fetch()
     }
     
     func fetch() -> [KaryawanModel] {
@@ -63,7 +61,45 @@ class KaryawanViewModel: NSObject {
             print("Error : ", err)
         }
         
+        self.karyawanData = karyawans
+        
         return karyawans
+    }
+    
+    func delete(id: Int){
+        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {return}
+        let managedContext = appDelegate.persistentContainer.viewContext
+        
+        let fetchRequest:NSFetchRequest<NSFetchRequestResult> = NSFetchRequest.init(entityName: "KaryawanEntity")
+        fetchRequest.predicate = NSPredicate(format: "id = %@", NSNumber(value: id))
+        
+        do {
+            let dataToDelete = try managedContext.fetch(fetchRequest)[0] as! NSManagedObject
+            managedContext.delete(dataToDelete)
+        }  catch let err {
+            print("Error : ", err)
+        }
+    }
+    
+    func update(id: Int, name: String, salary: Int){
+        let karyawanModel = KaryawanModel(id: id, name: name, salary: salary)
+        
+        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {return}
+        let managedContext = appDelegate.persistentContainer.viewContext
+        
+        let fetchRequest:NSFetchRequest<NSFetchRequestResult> = NSFetchRequest.init(entityName: "KaryawanEntity")
+        fetchRequest.predicate = NSPredicate(format: "id = %@", NSNumber(value: karyawanModel.id))
+        
+        do {
+            let fetch = try managedContext.fetch(fetchRequest)
+            let dataToUpdate = fetch[0] as! NSManagedObject
+            dataToUpdate.setValue(karyawanModel.id, forKey: "id")
+            dataToUpdate.setValue(karyawanModel.name, forKey: "name")
+            dataToUpdate.setValue(karyawanModel.salary, forKey: "salary")
+            
+        } catch let err {
+            print("Error : ", err)
+        }
     }
     
 }

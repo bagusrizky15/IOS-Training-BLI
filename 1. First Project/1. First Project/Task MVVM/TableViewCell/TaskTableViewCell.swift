@@ -28,10 +28,6 @@ class TaskTableViewCell: UITableViewCell {
         idText.text = String(idValue)
         nameText.text = nameValue
         salaryText.text = String(salaryValue)
-        
-        print(idValue)
-        print(nameValue)
-        print(salaryValue)
     }
     
 }

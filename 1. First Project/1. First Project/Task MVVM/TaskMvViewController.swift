@@ -18,7 +18,6 @@ class TaskMvViewController: UIViewController {
     @IBAction func addButton(_ sender: UIButton) {
         let alertController = UIAlertController(title: "Tambah Data", message: nil, preferredStyle: .alert)
         
-        // Add two text fields
         alertController.addTextField { (textField) in
             textField.placeholder = "ID"
         }
@@ -29,14 +28,16 @@ class TaskMvViewController: UIViewController {
             textField.placeholder = "Salary"
         }
         
-        // Add OK and Cancel actions
         let cancelAction = UIAlertAction(title: "Cancel", style: .default, handler: nil)
         let saveAction = UIAlertAction(title: "Save", style: .default) { action in
+            
             self.mKaryawanModel.createData(
                 id: Int(alertController.textFields![0].text!)!,
                 name: alertController.textFields![1].text!,
                 salary: Int(alertController.textFields![2].text!)!
             )
+            
+            self.tableView.reloadData()
         }
         
         alertController.addAction(cancelAction)
@@ -55,8 +56,7 @@ class TaskMvViewController: UIViewController {
         tableView.delegate = self
         tableView.dataSource = self
         
-        tableView.rowHeight = 80
-        tableView.estimatedRowHeight = 500
+        tableView.rowHeight = 55
         
         mKaryawanModel.fetch()
     }
@@ -78,5 +78,46 @@ extension TaskMvViewController : UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         mKaryawanModel.karyawanData.count
     }
+    
+        func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+            tableView.deselectRow(at: indexPath, animated: true)
+            
+            let dataK = mKaryawanModel.karyawanData[indexPath.row]
+            
+            let alert = UIAlertController(title: "Ubah atau Hapus", message: "", preferredStyle: UIAlertController.Style.alert)
+            
+            alert.addTextField { (textField) in
+                textField.placeholder = "\(dataK.id)"
+            }
+            alert.addTextField { (textField) in
+                textField.placeholder = "\(dataK.name)"
+            }
+            alert.addTextField { (textField) in
+                textField.placeholder = "\(dataK.salary)"
+            }
+            
+            let deleteAction = UIAlertAction(title: "Delete", style: .default){ delete in
+                self.mKaryawanModel.delete(id: dataK.id)
+                self.mKaryawanModel.fetch()
+                self.tableView.reloadData()
+            }
+            let updateAction = UIAlertAction(title: "Update", style: .default) { action in
+                
+                self.mKaryawanModel.createData(
+                    id: Int(alert.textFields![0].text!)!,
+                    name: alert.textFields![1].text!,
+                    salary: Int(alert.textFields![2].text!)!
+                )
+                
+                self.mKaryawanModel.fetch()
+                self.tableView.reloadData()
+            }
+            
+            alert.addAction(deleteAction)
+            alert.addAction(updateAction)
+            
+            self.present(alert, animated: true)
+            
+        }
     
 }
