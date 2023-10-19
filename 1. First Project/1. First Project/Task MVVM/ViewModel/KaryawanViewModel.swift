@@ -7,41 +7,63 @@
 
 import Foundation
 import UIKit
+import CoreData
 
-var controller : UIViewController = UIApplication.sharedApplication().delegate?.window??.rootViewController
-
-class KaryawanViewModel {
-    func popUpAlert(){
-        let alert = UIAlertController(title: "Tambahkan Data", message: nil, preferredStyle: .alert)
-     
-        alert.addTextField { (textField) in
-            textField.text = "ID"
+class KaryawanViewModel: NSObject {
+    private(set) var karyawanData: [KaryawanModel] = [] {
+        didSet {
+            self.bindDataToVC()
         }
-        alert.addTextField { (textField) in
-            textField.text = "Name"
-        }
-        alert.addTextField { (textField) in
-            textField.text = "Salary"
-        }
-        
-//        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
-//        let saveAction = UIAlertAction(title: "Save", style: .default) { (_) in
-//
-//            if let idTextField = alert.textFields,
-//               let nameTextField = alert.textFields,
-//               let salaryTextField = alert.textFields,
-//               let id = idTextField.text,
-//               let name = nameTextField.text,
-//               let salary = salaryTextField.text{
-//
-//                print("Entered ID: \(id), Name: \(name), Salary: \(salary)")
-//            }
-//        }
-//
-//        alert.addAction(cancelAction)
-//        alert.addAction(saveAction)
-        
-        // Present the alert controller
-        controller.present(alert, animated: true)
     }
+    
+    var bindDataToVC: () -> () = {}
+    
+    func createData(id:Int, name:String, salary:Int){
+        let karyawanModel = KaryawanModel(id: id, name: name, salary: salary)
+        
+        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {return}
+        let managedContext = appDelegate.persistentContainer.viewContext
+        
+        let userEntity = NSEntityDescription.entity(forEntityName: "KaryawanEntity", in: managedContext)
+        let insert = NSManagedObject(entity: userEntity!, insertInto: managedContext)
+        
+        insert.setValue(karyawanModel.id, forKey: "id")
+        insert.setValue(karyawanModel.name, forKey: "name")
+        insert.setValue(karyawanModel.salary, forKey: "salary")
+        
+        do {
+            try managedContext.save()
+        } catch let err {
+            print("Error ", err)
+        }
+        
+        fetch()
+    }
+    
+    func fetch() -> [KaryawanModel] {
+        
+        var karyawans: [KaryawanModel] = []
+        
+        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {return karyawans}
+        let managedContext = appDelegate.persistentContainer.viewContext
+        
+        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "KaryawanEntity")
+        do {
+            let result = try managedContext.fetch(fetchRequest) as! [NSManagedObject]
+            
+            result.forEach{ karyawan in
+                
+                karyawans.append(KaryawanModel(
+                    id: karyawan.value(forKey: "id") as! Int,
+                    name: karyawan.value(forKey: "name") as! String,
+                    salary: karyawan.value(forKey: "salary") as! Int)
+                )
+            }
+        } catch let err {
+            print("Error : ", err)
+        }
+        
+        return karyawans
+    }
+    
 }
