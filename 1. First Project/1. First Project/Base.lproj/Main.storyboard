@@ -11,7 +11,7 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController storyboardIdentifier="FirstView" id="BYZ-38-t0r" customClass="ViewController" customModule="___First_Project" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="FirstView" id="BYZ-38-t0r" customClass="ViewController" customModule="Traine_DEBUG" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -87,6 +87,15 @@
                                     <action selector="taskMvClick:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Lxx-jU-E3j"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tC2-pL-KuT">
+                                <rect key="frame" x="114" y="743" width="167" height="35"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="tinted" title="WatchIOS"/>
+                                <connections>
+                                    <action selector="watchClick:" destination="BYZ-38-t0r" eventType="touchUpInside" id="oOZ-Vj-6jF"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -103,7 +112,7 @@
         <!--Second View Controller-->
         <scene sceneID="8mq-Pt-2uL">
             <objects>
-                <viewController storyboardIdentifier="SecondView" id="Fc1-zf-V7L" customClass="SecondViewController" customModule="___First_Project" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SecondView" id="Fc1-zf-V7L" customClass="SecondViewController" customModule="Traine_DEBUG" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ZSL-Nn-swv">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -134,7 +143,7 @@
         <!--Fetch Data View Controller-->
         <scene sceneID="fcR-ww-aRd">
             <objects>
-                <viewController storyboardIdentifier="FetchView" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Ms5-wr-TQc" customClass="FetchDataViewController" customModule="___First_Project" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="FetchView" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Ms5-wr-TQc" customClass="FetchDataViewController" customModule="Traine_DEBUG" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="JMP-U1-40F">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -169,7 +178,7 @@
         <!--Task Mv View Controller-->
         <scene sceneID="3BF-dZ-QaE">
             <objects>
-                <viewController storyboardIdentifier="TaskMView" id="20a-7k-tcb" customClass="TaskMvViewController" customModule="___First_Project" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="TaskMView" id="20a-7k-tcb" customClass="TaskMvViewController" customModule="Traine_DEBUG" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="lMN-y0-P3E">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -213,7 +222,7 @@
         <!--Table View Controller-->
         <scene sceneID="XlK-Ah-oM3">
             <objects>
-                <viewController storyboardIdentifier="TableView" id="Ehv-l8-o5g" customClass="TableViewController" customModule="___First_Project" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="TableView" id="Ehv-l8-o5g" customClass="TableViewController" customModule="Traine_DEBUG" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="eHk-hj-9uZ">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -269,7 +278,7 @@
         <!--Core View Controller-->
         <scene sceneID="mkX-AJ-bHc">
             <objects>
-                <viewController storyboardIdentifier="CoreViewCell" id="9J2-gP-wnG" customClass="CoreViewController" customModule="___First_Project" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="CoreViewCell" id="9J2-gP-wnG" customClass="CoreViewController" customModule="Traine_DEBUG" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="fBu-P1-PB4">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

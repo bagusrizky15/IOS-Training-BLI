@@ -6,19 +6,43 @@
 //
 
 import UIKit
+import WatchConnectivity
+
+var watchSession: WCSession?
 
 class ViewController: UIViewController {
     
     @IBOutlet weak var textField: UITextField!
     var textFill = ""
     
+    let dict: [String : Any] = ["key": "Data Received"]
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        textField.borderStyle = UITextField.BorderStyle.roundedRect
+        if !WCSession.isSupported() {
+            watchSession = nil
+            return
+        }
         
+        watchSession = WCSession.default
+        watchSession?.delegate = self
+        watchSession?.activate()
+        
+        textField.borderStyle = UITextField.BorderStyle.roundedRect
+       
+        print(Environment.productNameString)
     }
     
+    
+    @IBAction func watchClick(_ sender: UIButton) {
+        do {
+            try watchSession?.updateApplicationContext(dict)
+            try watchSession?.sendMessage(dict, replyHandler: nil)
+        } catch {
+            print(error.localizedDescription)
+        }
+    }
     
     @IBAction func taskMvClick(_ sender: UIButton) {
         let taskMView = self.storyboard?.instantiateViewController(withIdentifier: "TaskMView") as! TaskMvViewController
@@ -99,5 +123,19 @@ class ViewController: UIViewController {
 //        }
 //    }
     
+}
+
+extension ViewController: WCSessionDelegate {
+    func session(_ session: WCSession, activationDidCompleteWith activationState: WCSessionActivationState, error: Error?) {
+        
+    }
+    
+    func sessionDidBecomeInactive(_ session: WCSession) {
+        watchSession?.activate()
+    }
+    
+    func sessionDidDeactivate(_ session: WCSession) {
+        watchSession?.activate()
+    }
 }
 
